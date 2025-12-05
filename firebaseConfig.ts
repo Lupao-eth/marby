@@ -1,19 +1,15 @@
-// firebaseConfig.ts
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyADIXgqDvMrHGDCs4xpYSXbTyLIar-woAA",
-  authDomain: "marby-905dc.firebaseapp.com",
-  projectId: "marby-905dc",
-  storageBucket: "marby-905dc.firebasestorage.app",
-  messagingSenderId: "1012862298198",
-  appId: "1:1012862298198:web:716705c9464c8330e3b3f7",
-  measurementId: "G-NT6CR49YDG"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firestore
 export const db = getFirestore(app);
